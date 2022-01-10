@@ -37,7 +37,7 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
@@ -47,9 +47,6 @@ const ExpenseForm = (props) => {
     setEnteredDate("");
   };
 
-  const cancelHandler = () => {
-
-  }
 
   return (
     <form className="expense-form" onSubmit={submitHandler}>
