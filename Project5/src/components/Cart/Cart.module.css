@@ -4,6 +4,8 @@
   padding: 0;
   max-height: 20rem;
   overflow: auto;
+  max-height: 20rem;
+  overflow: scroll;
 }
 
 .total {
