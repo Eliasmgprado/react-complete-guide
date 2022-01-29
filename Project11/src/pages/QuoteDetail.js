@@ -2,12 +2,11 @@ import { Fragment, useEffect } from "react";
 import { Link, Route, useParams, useRouteMatch } from "react-router-dom";
 
 import useHttp from "../hooks/use-http";
-import { addQuote } from "../lib/lib/api";
+import { getSingleQuote } from "../lib/lib/api";
 
 import Comments from "../components/comments/Comments";
 import HighlightedQuote from "../components/quotes/HighlightedQuote";
 import LoadingSpinner from "../components/UI/LoadingSpinner";
-
 
 const QuoteDetail = () => {
   const match = useRouteMatch();
@@ -19,7 +18,7 @@ const QuoteDetail = () => {
     status,
     data: loadedQuote,
     error,
-  } = useHttp(addQuote, true);
+  } = useHttp(getSingleQuote, true);
 
   useEffect(() => {
     sendRequest(quoteId);
@@ -53,7 +52,7 @@ const QuoteDetail = () => {
       </Route>
 
       <Route path={`${match.path}/comments`}>
-        <Comments></Comments>
+        <Comments />
       </Route>
     </Fragment>
   );

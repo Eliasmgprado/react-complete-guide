@@ -12,6 +12,7 @@ import NewCommentForm from "./NewCommentForm";
 const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false);
   const params = useParams();
+
   const {
     sendRequest,
     status,
@@ -43,7 +44,8 @@ const Comments = () => {
   }
 
   if (status === "completed" && loadedComments && loadedComments.length > 0) {
-    comments = <CommentsList comment={loadedComments} />;
+    console.log(loadedComments)
+    comments = <CommentsList comments={loadedComments} />;
   }
   if (
     status === "completed" &&
